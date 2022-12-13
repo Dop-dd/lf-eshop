@@ -1,0 +1,70 @@
+{% extends "shop/base.html" %}
+{% load static %}
+{% block title %}
+  {% if category %}{{ category.name }}{% else %}Products{% endif %}
+{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid">
+    <div class="row">
+        <img style="width: 100%" src="{% static 'img/hero.jpg' %}" alt="">
+    </div>
+</div>
+
+   <!-- Products secton-->
+<div class="py-4">
+    <!-- center -->
+    <div class="container">
+        <div class="row">
+            <div class="col-10 mx-auto my-2 text-center">
+                <h1 class="text-capitalize font-weight-bold">
+                    All Products
+                </h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div class="container">
+
+        <h1 class="text-justify">{% if category %}{{ category.name }}{% else %}
+        {% endif %}</h1>
+
+        <div class="row">
+        {% for product in products %}
+
+        <div class="col-lg-3 col-md-4">
+            <br>
+            <br>
+
+            <div class="card mb-" style="border-color: transparent;">
+                <div class="p-4">
+            <a href="{{ product.get_absolute_url }}">
+              <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'img/no_image.png' %}{% endif %}"
+              class="card-img-top"></a>
+               </div>
+            <!------  -->
+                 <!----- Display products title -->
+                 <div class="card-footer d-flex justify-content-between"
+                 style="background: transparent; border-color: transparent">
+                <p class="font-weight-bold mb-0">
+                    <a href="{{ product.get_absolute_url }}">{{ product.name }}</a>
+                </p>
+                <h5 class="text-info font-italic mb-0">
+                 <span class="mr-1">€</span>{{product.price}}</h5>
+             </div>
+            <!-----   -->
+
+          </div>
+        </div>
+        {% endfor %}
+
+    </div>
+    </div>
+
+
+
+
+
+{% endblock %}

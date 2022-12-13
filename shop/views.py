@@ -4,7 +4,7 @@ from .models import Category, Product
 # Building catalog views
 # Product list  views
 def product_list(request, category_slug=None):
-    category_slug = None
+    category = None
     categories = Category.objects.all()
     # retrieve only available products.
     products = Product.objects.filter(available=True)

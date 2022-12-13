@@ -1,0 +1,36 @@
+{% extends "shop/base.html" %}
+{% load static %}
+{% block title %}
+{{ product.name }}
+{% endblock %}
+{% block content %}
+
+<div class="container py-5">
+    <div class="row mt-5">
+        <div class="col-10 mx-auto col-md-6 my-3">
+            <img src="{% if product.image %}{{ product.image.url }}{% else %}
+    {% static 'img/no_image.png' %}{% endif %}">
+        </div>
+
+        <div class="col-10 mx-auto col-md-6 my-5">
+            <p class="text-justify product_text mb-2">Product Category</p>
+            <h4>
+                <a href="{{ product.category.get_absolute_url }}">
+                    {{ product.category }}
+                </a>
+            </h4>
+            <br>
+            <!--<p class="text-justify product_text mb-3">Product Description</p> -->
+            <h3 class="product_title pt-0 ">{{product.name}}</h3>
+
+            <p class="text-justify product_text mb-3">Price</p>
+
+            <h5 class="text-info font-italic mb-3">
+                <span class="mr-1">€</span>{{product.price}}
+            </h5>
+            {{ product.description|linebreaks }}
+        </div>
+    </div>
+</div>
+
+{% endblock %}
