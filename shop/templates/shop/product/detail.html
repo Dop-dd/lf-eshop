@@ -28,6 +28,15 @@
             <h5 class="text-info font-italic mb-3">
                 <span class="mr-1">€</span>{{product.price}}
             </h5>
+
+            <!---Product form  -->
+            <form action="{% url 'cart:cart_add' product.id %}" method="post">
+                {{ cart_product_form }}
+                {% csrf_token %}
+                <input type="submit" value="Add to cart">
+              </form>
+              <!---End form  -->
+
             {{ product.description|linebreaks }}
         </div>
     </div>

@@ -91,9 +91,7 @@ table.cart img {
     width:180px;
 }
 
-tbody td.num {
-    text-align:right;
-}
+
 
 td input[type="submit"] {
     font-size:12px;
@@ -360,3 +358,11 @@ form div.field {
     text-transform: uppercase;
     letter-spacing: .2em;
 }
+/*
+.table td {
+    padding: .75rem;
+    vertical-align: middle;
+    border-top: 1px solid #dee2e6;
+}
+*/
+
