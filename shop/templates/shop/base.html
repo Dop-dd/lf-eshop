@@ -67,13 +67,31 @@
       </div>
        <!--  Form end-->
       </nav>
-<!--- -->
+
+  <!---context processors  -->
+
+      <div class= "cart m-3 ">
+        {% with total_items=cart|length %}
+        {% if total_items > 0 %}
+        <a href="{% url 'cart:cart_detail' %}" style="text-decoration: none;">
+          <button type="button" class="btn btn-success font-weight-bold text-white">Cart Total:
+          {{ total_items }} item{{ total_items|pluralize }},
+          €{{ cart.get_total_price }}
+        </button>
+        </a>
+        {% else %}
+        Your cart is empty.
+      {% endif %}
+      {% endwith %}
+    </div>
+
+
 
         {% block content %}
 
         {% endblock %}
 
-        
+
 
 
 

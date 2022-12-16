@@ -6,7 +6,7 @@
 {% endblock %}
 
 {% block content %}
-  <h1>Your shopping cart</h1>
+  <h5 class="text-center">Your shopping cart</h5>
 
   <div class="container">
   <table class=" table cart">
@@ -61,10 +61,23 @@
       </tr>
     </tbody>
   </table>
-  <p class="text-right">
-    <a href="{% url 'shop:product_list' %}" class="buttonlight">Continue shopping</a>
 
-  </p>
+
+<div class="row">
+  <div class="col-md-12 bg-light text-right">
+    <a href="{% url 'shop:product_list' %} style='text-decoration: none;'">
+      <button type="button" class="btn btn-primary font-weight-bold text-white">Continue shopping
+      </button>
+    </a>
+    <a href="{% url 'orders:order_create' %}" style="text-decoration: none;">
+      <button type="button" class="btn btn-success ml-2 font-weight-bold text-white">Checkout
+      </button>
+    </a>
+  </div>
 </div>
+<br>
+
+</div>
+
 
 {% endblock %}
