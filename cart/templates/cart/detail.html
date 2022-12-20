@@ -8,7 +8,7 @@
 {% block content %}
   <h5 class="text-center">Your shopping cart</h5>
 
-  <div class="container">
+  <div class="container container-cart-detail">
   <table class=" table cart">
     <thead>
       <tr>
@@ -42,7 +42,6 @@
               </form>
             </td>
             <td>
-
               <form action="{% url 'cart:cart_remove' product.id %}" method="post">
                 <input type="submit" value="Remove">
                 {% csrf_token %}
@@ -65,7 +64,7 @@
 
 <div class="row">
   <div class="col-md-12 bg-light text-right">
-    <a href="{% url 'shop:product_list' %} style='text-decoration: none;'">
+    <a href="{% url 'shop:product_list' %}" style="text-decoration: none;">
       <button type="button" class="btn btn-primary font-weight-bold text-white">Continue shopping
       </button>
     </a>

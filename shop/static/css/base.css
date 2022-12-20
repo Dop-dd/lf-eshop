@@ -34,14 +34,7 @@ a:hover {
     color:#77b6e2;
 }
 
-a.button, input[type="submit"] {
-    color:#fff;
-    background:#5993bb;
-    border-radius:4px;
-    padding:10px 20px;
-    font-size:14px;
-    border:0;
-}
+
 
 a.button.light {
     color:#666;
@@ -97,6 +90,7 @@ td input[type="submit"] {
     font-size:12px;
     padding:4px 10px;
 }
+*/
 
 form p label, form p input {
     float:left;
@@ -119,6 +113,16 @@ form p input {
     border-radius:4px;
 }
 
+a.button, input[type="submit"] {
+    color:#fff;
+    background:#5993bb;
+    border-radius:4px;
+    padding:10px 20px;
+    font-size:14px;
+    border:0;
+}
+
+/*
 ul.errorlist {
    float:left;
    color:#ff0000;
@@ -327,6 +331,7 @@ ul.errorlist {
 .recommendations.cart img {
     width:120px;
 }
+*/
 
  braintree hosted fields
 form div.field {
@@ -341,7 +346,7 @@ form div.field {
     color:#666;
     border-radius:4px;
 }
-*/
+
 /* Product page */
 .product_title {
     font-size: 25px;
@@ -358,6 +363,15 @@ form div.field {
     text-transform: uppercase;
     letter-spacing: .2em;
 }
+
+.container-cart-detail {
+    margin-top: 100px;
+}
+
+.footer-all{
+    margin-top: 200px;
+}
+
 /*
 .table td {
     padding: .75rem;

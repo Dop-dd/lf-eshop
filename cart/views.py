@@ -27,7 +27,6 @@ def cart_add(request, product_id):
                  override_quantity=cd['override'])
     return redirect('cart:cart_detail')
 
-
 """
 The cart_remove view receives the product ID as a parameter. You use the require_POST decorator to
 allow only POST requests. You retrieve the Product instance with the given ID and remove
@@ -46,10 +45,9 @@ def cart_remove(request, product_id):
 def cart_detail(request):
     cart = Cart(request)
     for item in cart:
-        # create an instance of CartAddProductForm for each item in the cart
         item['update_quantity_form'] = CartAddProductForm(initial={
-                                'quantity': item['quantity'],
-                                'override': True})
+                            'quantity': item['quantity'],
+                            'override': True})
     return render(request, 'cart/detail.html', {'cart': cart})
 
 """
